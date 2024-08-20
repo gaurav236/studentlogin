@@ -1,5 +1,6 @@
 package com.tesla.studentlogin.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,12 @@ public class Studentserviceimpl implements Studentservice {
 		Optional<Student> s = sd.findById(id);
 		Student st = s.get();
 		return st;
+	}
+
+	@Override
+	public List<Student> getlist() {
+		List<Student> l = (List<Student>) sd.findAll();
+		return l;
 	}
 
 }
